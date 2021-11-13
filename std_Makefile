@@ -1,5 +1,10 @@
-CC  := gcc
-CXX := g++
+ifdef CI_SERVER
+  CC  := gcc
+  CXX := g++
+else
+  CC  := icc
+  CXX := icpc
+endif
 
 default:
 	$(CXX) -o main main.cc

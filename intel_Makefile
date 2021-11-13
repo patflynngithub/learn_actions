@@ -1,9 +1,0 @@
-CC  := icc
-CXX := icpc
-
-default:
-	$(CXX) -o main main.cc
-
-clean:
-	rm -f main
-
