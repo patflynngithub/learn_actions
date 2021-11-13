@@ -1,5 +1,5 @@
 CC  := icc
-CX := icpc
+CXX := icpc
 
 default:
 	$(CXX) -o main main.cc
