@@ -13,3 +13,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: make
       run: make -f std_Makefile
+    - name: execute
+      run: ./main succeed
+
