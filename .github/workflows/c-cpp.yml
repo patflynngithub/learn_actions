@@ -17,5 +17,5 @@ jobs:
     - name: make
       run: make -f std_Makefile
     - name: execute
-      run: ./main fail
+      run: ./main succeed
 
