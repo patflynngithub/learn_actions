@@ -1,0 +1,27 @@
+name: C/C++ CI
+
+on:
+  workflow_dispatch:
+    branches: [ main ]
+
+env:
+  CI_SERVER: true
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: create build directory
+      run:  mkdir build
+    - name: change to build directory
+      run:  cd build
+    - name: run cmake
+      run:  cmake ..
+    - name: run make
+      run:  make
+    - name: execute program
+      run:  ./main succeed
+
