@@ -1,0 +1,21 @@
+name: C/C++ CI manual succeed
+
+on:
+  workflow_dispatch:
+    branches: [ main ]
+
+env:
+  CI_SERVER: true
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make
+      run: make -f std_Makefile
+    - name: execute
+      run: ./main succeed
+
