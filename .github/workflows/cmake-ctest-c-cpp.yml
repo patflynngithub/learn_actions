@@ -1,0 +1,30 @@
+name: CMake and CTest C/C++ CI
+
+on:
+  workflow_dispatch:
+    branches: [ main ]
+
+env:
+  CI_SERVER: true
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: list home directory
+      run:  ls -al
+    - name: create build directory
+      run:  mkdir build
+    - name: run cmake
+      run:  cmake ..
+      working-directory: build
+    - name: run make
+      run:  make
+      working-directory: build
+    - name: ctest
+      run:  make test
+      working-directory: build
+
