@@ -1,0 +1,21 @@
+name: Fortran CI manual succeed
+
+on:
+  workflow_dispatch:
+    branches: [ main ]
+
+env:
+  CI_SERVER: true
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: compile
+      run: gfortran -o fortran_main_succeed fortran_main_succeed.F90
+    - name: execute
+      run: ./fortran_main_succeed
+
