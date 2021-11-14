@@ -14,10 +14,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: list home directory
+      run:  ls -al
     - name: create build directory
       run:  mkdir build
     - name: change to build directory
       run:  cd build
+    - name: list current directory
+      run:  ls -al
     - name: run cmake
       run:  cmake ..
     - name: run make
