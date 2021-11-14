@@ -1,4 +1,4 @@
-name: C/C++ CI manual succeed
+name: C/C++ CI manual fail
 
 on:
   workflow_dispatch:
