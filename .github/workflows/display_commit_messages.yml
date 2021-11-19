@@ -1,4 +1,4 @@
-name: Display github context
+name: Display commit messages
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: display_github_context
+    - name: display_commit_messages
       run: |
           echo "commits: ${{toJSON(github.event.commits)}}"
           echo "head_commit: ${{toJSON(github.event.head_commit)}}" 
