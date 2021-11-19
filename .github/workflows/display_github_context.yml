@@ -16,4 +16,5 @@ jobs:
     - name: display_github_context
       run: |
           echo "commits: ${{toJSON(github.event.commits)}}"
+          echo "head_commit: ${{toJSON(github.event.head_commit)}}" 
 
