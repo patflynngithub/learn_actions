@@ -1,0 +1,19 @@
+name: Display github context
+
+on:
+  push:
+
+env:
+  CI_SERVER: true
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: display_github_context
+      run: |
+          echo "${{toJSON(github.event)}}"
+
