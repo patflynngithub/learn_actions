@@ -18,6 +18,8 @@ jobs:
         cat ford_fortran_doc/file.txt
     - name: push change up to repo
       run: |
+        git config --global user.email "patflynn@hotmail.com"
+        git config --global user.name "Patrick Flynn"
         git status
         git add -A .
         git commit -m "pushed change up to GitHub"
