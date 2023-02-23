@@ -1,0 +1,24 @@
+name: Prototype: push up local repo change to GitHub
+
+on: workflow_dispatch
+
+jobs:
+  git_push_changes:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: build 
+      run: |
+        cd docs
+        g++ -o git_push.exe git_push.cc
+    - name: generate change in repo
+      run: |
+        cd docs
+        ./git_push.exe succeed
+        cat ford_fortran_doc/file.txt
+    - name: push change up to repo
+      run: |
+        git status
+        git add -A .
+        git commit -m "pushed change up to GitHub"
+        git push
