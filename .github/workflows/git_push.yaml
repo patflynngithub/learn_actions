@@ -1,4 +1,4 @@
-name: Prototype: push up local repo change to GitHub
+name: Push up local repo change to GitHub
 
 on: workflow_dispatch
 
