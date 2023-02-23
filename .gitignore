@@ -28,6 +28,7 @@
 
 # Executables
 main
+git_push
 *.exe
 *.out
 *.app
